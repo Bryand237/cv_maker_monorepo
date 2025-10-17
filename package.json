@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "pnpm run --parallel dev",
+    "build": "pnpm run --recursive build",
+    "dev:frontend": "pnpm --filter @cv_maker/frontend dev",
+    "dev:backend": "pnpm --filter @cv_maker/backend dev"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3"
+  }
+}
