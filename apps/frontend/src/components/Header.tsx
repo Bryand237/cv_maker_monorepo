@@ -1,10 +1,15 @@
 import { Group } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Header = () => {
+  const pathname: String = useLocation().pathname;
+  const hide: boolean = pathname !== "/";
   return (
-    <div className="absolute shadow-md rounded-full top-6 left-4 right-4 h-13 bg-white/10 backdrop-blur-sx text-white p-4 flex items-center justify-between">
+    <div
+      className="absolute shadow-md rounded-full top-6 left-4 right-4 h-13 bg-white/10 backdrop-blur-sx text-white p-4 flex items-center justify-between"
+      hidden={hide}
+    >
       <div className="logo p-2 rounded-md text-white">
         <Group />
       </div>
@@ -17,6 +22,9 @@ const Header = () => {
         </NavLink>
         <NavLink to={"/"} className={"hover:underline"}>
           Guide
+        </NavLink>
+        <NavLink to={"/"} className={"hover:underline"}>
+          FAQs
         </NavLink>
       </div>
       <div className="actions flex items-center gap-4">
